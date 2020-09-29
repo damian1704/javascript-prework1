@@ -1,8 +1,25 @@
-function printMessage(msg){
-	var div = document.createElement('div');
-	div.innerHTML = msg;
-	document.getElementById('messages').appendChild(div);
-	var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
+
+	
+var argButtonName, buttonPaper, buttonRock, buttonScissor, buttonTest;
+
+/**
+ * Describe this function...
+ */
+buttonTest = document.getElementById('button-test');
+buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
+buttonRock = document.getElementById('button-rock');
+buttonRock.addEventListener('click', function(){ buttonClicked('Guzik KAMIEŃ'); });
+buttonPaper = document.getElementById('button-paper');
+buttonPaper.addEventListener('click', function(){ buttonClicked('Guzik PAPIER'); });
+buttonScissor = document.getElementById('button-scissor');
+buttonScissor.addEventListener('click', function(){ buttonClicked('Guzik NOŻYCE'); });
+
+function buttonClicked(argButtonName) {
+  clearMessages();
+  console.log(argButtonName + ' został kliknięty');
+}
+
+var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
 
 /**
  * Describe this function...
@@ -39,18 +56,16 @@ function displayResult(argPlayerMove, argComputerMove) {
   }
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
-playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-console.log('wybór ruchu gracza to: ' + playerInput);
-playerMove = getMoveName(playerInput);
+
+
+playerMove = argButtonName;
 console.log('ruch gracza to: ' + playerMove);
 randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('wylosowana liczba to: ' + randomNumber);
 computerMove = getMoveName(randomNumber);
 console.log('ruch komputera to: ' + computerMove);
 displayResult(playerMove, computerMove);
-}
-	
-function clearMessages(){
-	document.getElementById('messages').innerHTML = '';
-}
 
+buttonTest.addEventListener('click', function(){
+    buttonClicked('Test button')
+});
