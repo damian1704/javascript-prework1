@@ -1,6 +1,6 @@
 
 	
-var argButtonName, buttonPaper, buttonRock, buttonScissor, buttonTest;
+const argButtonName, buttonPaper, buttonRock, buttonScissor, buttonTest;
 
 /**
  * Describe this function...
@@ -19,7 +19,7 @@ function buttonClicked(argButtonName) {
   console.log(argButtonName + ' został kliknięty');
 }
 
-var argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
+let argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
 
 /**
  * Describe this function...
