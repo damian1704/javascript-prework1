@@ -1,17 +1,15 @@
-
-	
 const argButtonName, buttonPaper, buttonRock, buttonScissor, buttonTest;
 
 /**
  * Describe this function...
  */
-buttonTest = document.getElementById('button-test');
+const buttonTest = document.getElementById('button-test');
 buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
-buttonRock = document.getElementById('button-rock');
+const buttonRock = document.getElementById('button-rock');
 buttonRock.addEventListener('click', function(){ buttonClicked('Guzik KAMIEŃ'); });
-buttonPaper = document.getElementById('button-paper');
+const buttonPaper = document.getElementById('button-paper');
 buttonPaper.addEventListener('click', function(){ buttonClicked('Guzik PAPIER'); });
-buttonScissor = document.getElementById('button-scissor');
+const buttonScissor = document.getElementById('button-scissor');
 buttonScissor.addEventListener('click', function(){ buttonClicked('Guzik NOŻYCE'); });
 
 function buttonClicked(argButtonName) {
@@ -19,7 +17,7 @@ function buttonClicked(argButtonName) {
   console.log(argButtonName + ' został kliknięty');
 }
 
-let argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
+const argComputerMove, argMoveId, argPlayerMove, computerMove, playerInput, playerMove, randomNumber;
 
 /**
  * Describe this function...
@@ -58,14 +56,21 @@ function displayResult(argPlayerMove, argComputerMove) {
 }
 
 
-playerMove = argButtonName;
+const playerMove = argButtonName;
 console.log('ruch gracza to: ' + playerMove);
-randomNumber = Math.floor(Math.random() * 3 + 1);
+const randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log('wylosowana liczba to: ' + randomNumber);
-computerMove = getMoveName(randomNumber);
+let computerMove = getMoveName(randomNumber);
 console.log('ruch komputera to: ' + computerMove);
 displayResult(playerMove, computerMove);
 
+
+function buttonClicked(buttonName){
+  console.log(buttonName + ' został kliknięty');
+}
+
+const buttonTest = document.getElementById('button-test');
+
 buttonTest.addEventListener('click', function(){
-    buttonClicked('Test button')
+  buttonClicked('Test button');
 });
